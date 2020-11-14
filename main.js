@@ -152,8 +152,7 @@ console.log(
   "\n" // => '1,9,10'
 );
 
-
-console.log('Problem Solving Q: 6');
+console.log("Problem Solving Q: 6");
 
 /* Even or Not */
 
@@ -162,13 +161,43 @@ Write a function that returns true if a number is even, and false otherwise.
 */
 
 function evenOrNot(num) {
-  return  (num%2===0)
+  return num % 2 === 0;
 }
 
 console.log(
-'1:',evenOrNot(1) // => false
-,' 2:',evenOrNot(2) // => true
-,' 5:',evenOrNot(5) // => false
-,' 99:',evenOrNot(99)// => false
-,' 0:',evenOrNot(0) // => true
+  "1:",
+  evenOrNot(1), // => false
+  " 2:",
+  evenOrNot(2), // => true
+  " 5:",
+  evenOrNot(5), // => false
+  " 99:",
+  evenOrNot(99), // => false
+  " 0:",
+  evenOrNot(0) // => true
+);
+
+console.log("Problem Solving Q: 7");
+
+/* Sum Array Odd */
+
+/*  
+Write a function that returns the sum of odd numbers in an array.
+*/
+
+function SumOddNumber(nums) {
+  let Summation_result = 0;
+  nums.map((num) => {
+    if (num % 2 !== 0) Summation_result += num;
+  });
+  return Summation_result;
+}
+
+console.log(
+  "sum results : ",
+  SumOddNumber([1, 2, 3, 4, 5]), // => 9
+  " ",
+  SumOddNumber([1, 5, 3, 4, 5]), // => 14
+  " ",
+  SumOddNumber([12, 2, 3, 4, 5, 0]) // => 8
 );
