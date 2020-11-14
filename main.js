@@ -150,7 +150,7 @@ console.log(
 
   FindIntersection(["1, 3, 9, 10, 17, 18", "1, 4, 9, 10"]),
   "\n" // => '1,9,10'
-
+);
 
 
 console.log('Problem Solving Q: 6');
@@ -162,12 +162,10 @@ Write a function that returns true if a number is even, and false otherwise.
 */
 
 function evenOrNot(num) {
- 
-  return  (num%2)
+  return  (num%2===0)
 }
 
 console.log(
-
 '1:',evenOrNot(1) // => false
 ,' 2:',evenOrNot(2) // => true
 ,' 5:',evenOrNot(5) // => false
