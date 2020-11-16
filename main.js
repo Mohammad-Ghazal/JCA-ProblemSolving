@@ -290,3 +290,42 @@ console.log(
 );
 
 
+console.log('Problem Solving Q: 10');
+
+/* Times Of Most Freq Char */
+
+/*  
+Write a function that returns the number of occurrences of the most frequent character in a sentence.
+*/
+
+function timesOfMostFreqChar(chars) {
+  let joined = chars.split(' ').join('').split('');
+  
+  let maxFreq= 0, freq = {},maxChar='';
+  joined.forEach(char => {
+    if(freq[char])
+    {freq[char]++;
+      if(freq[char]>maxFreq)
+      {maxFreq=freq[char];
+        maxChar=char;
+       
+        
+      }
+    }
+    else
+    freq[char]=1;
+  });
+
+  
+  return maxChar+' is the max letter frequncy  :'+maxFreq+ ' times \n';
+}
+
+console.log(
+timesOfMostFreqChar('hello world') // => 3
+,
+timesOfMostFreqChar('hello world lol') // => 5
+,
+timesOfMostFreqChar('hello world lol woooow') // => 7
+,
+timesOfMostFreqChar('hello world lol wow www.com') // => 6
+);
