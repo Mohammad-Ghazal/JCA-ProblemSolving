@@ -329,3 +329,45 @@ timesOfMostFreqChar('hello world lol woooow') // => 7
 ,
 timesOfMostFreqChar('hello world lol wow www.com') // => 6
 );
+
+
+
+console.log('Problem Solving Q: 11');
+
+/* Is Power Of Two */
+
+/*  
+Write a function that returns YES if a number is a power of 2, and NO otherwise.
+*/
+
+function isPowerOfTwo(num) {
+  while(num>=1)
+  {
+    if(num===2||num===1)
+    return 'YES'
+    else
+num=num/2;
+  }
+   return 'No';
+
+}
+
+
+console.log(
+   " 2",isPowerOfTwo(2) // => 'YES'
+  ," 1",isPowerOfTwo(1) // => 'YES'  // I am sure not a typo 1 => YES
+  ," 4",isPowerOfTwo(4) // => 'YES'
+  ," 6",isPowerOfTwo(6) // => 'NO'
+  ," 11",isPowerOfTwo(11) // => 'NO'
+  ," 16",isPowerOfTwo(16) // => 'YES'
+  ," 18",isPowerOfTwo(18) // => 'YES'.
+  ," ",isPowerOfTwo(24) // => 'NO'
+  ," ",isPowerOfTwo(25) // => 'NO'
+  ," ",isPowerOfTwo(28) // => 'NO'
+  ," ",isPowerOfTwo(32) // => 'YES'
+  ," ",isPowerOfTwo(63) // => 'NO'
+  ," ",isPowerOfTwo(64) // => 'YES'
+  ," ",isPowerOfTwo(1023) // => 'NO'
+  ," ",isPowerOfTwo(1024) // => 'YES'
+  ," ",isPowerOfTwo(0) // => 'NO'  
+);
