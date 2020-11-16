@@ -236,3 +236,57 @@ console.log(
   " ",
   uniqueItems([5, 77, 1, 3]) // => 4
 );
+
+console.log("Problem Solving Q: 9");
+
+/* Longest Sequence */
+
+/*  
+Write a function that returns the length of the longest sequence of 1s in an array of 1s and 0s.
+*/
+
+function longestSequence(sequence) {
+  let max = 0,
+    ones = 0;
+  // console.log('max befor =   ',max)
+  // console.log('ones befor: ' +ones);
+  for (let i = 0; i <= sequence.length; i++) {
+    // console.log("i=", i, "sequence[i] =", sequence[i]);
+    if (sequence[i] === 1) {
+      if (ones >= 1) {
+        ones++;
+      } else {
+        ones = 1;
+      }
+    } else {
+      if (ones > max) {
+        max = ones;
+      }
+      ones = 0;
+    }
+    // console.log('max after =   ',max)
+    // console.log('ones after =   ',ones)
+  }
+  if (max === 0) return "There is no one sequenced";
+  return max;
+  // YOUR CODE HERE
+}
+
+console.log(
+  " longest sereis results : \n",
+  longestSequence([0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1]) // => 4
+  ," ",
+  longestSequence([1, 1, 0, 1, 1, 0, 1, 0, 1, 1]) // => 2
+  ," ",
+  longestSequence([1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1]) // => 3
+  ," ",
+  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1]) // => 4
+  ," ",
+  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1]) // => 5
+  ," ",
+  longestSequence([1, 0, 0, 1]) // => 1
+  ," ",
+  longestSequence([0, 0, 0, 0]) // => 'There is no one sequenced'
+);
+
+
