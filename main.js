@@ -74,7 +74,7 @@ console.log(
   FirstReverse("Hello World"),
   "\n", // => 'dlroW olleH'
   FirstReverse("How are you?"),
-  "\n" // => '?uoy era woH'
+  "\n" // => 'uoy era woH'
 );
 console.log("---------------------------------------------");
 console.log("Problem Solving Q: 4 ");
@@ -152,6 +152,8 @@ console.log(
   "\n" // => '1,9,10'
 );
 
+console.log("---------------------------------------------");
+
 console.log("Problem Solving Q: 6");
 
 /* Even or Not */
@@ -176,6 +178,7 @@ console.log(
   " 0:",
   evenOrNot(0) // => true
 );
+console.log("---------------------------------------------");
 
 console.log("Problem Solving Q: 7");
 
@@ -201,6 +204,7 @@ console.log(
   " ",
   SumOddNumber([12, 2, 3, 4, 5, 0]) // => 8
 );
+console.log("---------------------------------------------");
 
 console.log("Problem Solving Q: 8");
 
@@ -236,6 +240,7 @@ console.log(
   " ",
   uniqueItems([5, 77, 1, 3]) // => 4
 );
+console.log("---------------------------------------------");
 
 console.log("Problem Solving Q: 9");
 
@@ -269,28 +274,28 @@ function longestSequence(sequence) {
   }
   if (max === 0) return "There is no one sequenced";
   return max;
-  // YOUR CODE HERE
+  
 }
 
 console.log(
   " longest sereis results : \n",
-  longestSequence([0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1]) // => 4
-  ," ",
-  longestSequence([1, 1, 0, 1, 1, 0, 1, 0, 1, 1]) // => 2
-  ," ",
-  longestSequence([1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1]) // => 3
-  ," ",
-  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1]) // => 4
-  ," ",
-  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1]) // => 5
-  ," ",
-  longestSequence([1, 0, 0, 1]) // => 1
-  ," ",
+  longestSequence([0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1]), // => 4
+  " ",
+  longestSequence([1, 1, 0, 1, 1, 0, 1, 0, 1, 1]), // => 2
+  " ",
+  longestSequence([1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1]), // => 3
+  " ",
+  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1]), // => 4
+  " ",
+  longestSequence([1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1]), // => 5
+  " ",
+  longestSequence([1, 0, 0, 1]), // => 1
+  " ",
   longestSequence([0, 0, 0, 0]) // => 'There is no one sequenced'
 );
+console.log("---------------------------------------------");
 
-
-console.log('Problem Solving Q: 10');
+console.log("Problem Solving Q: 10");
 
 /* Times Of Most Freq Char */
 
@@ -299,40 +304,33 @@ Write a function that returns the number of occurrences of the most frequent cha
 */
 
 function timesOfMostFreqChar(chars) {
-  let joined = chars.split(' ').join('').split('');
-  
-  let maxFreq= 0, freq = {},maxChar='';
-  joined.forEach(char => {
-    if(freq[char])
-    {freq[char]++;
-      if(freq[char]>maxFreq)
-      {maxFreq=freq[char];
-        maxChar=char;
-       
-        
+  let joined = chars.split(" ").join("").split("");
+
+  let maxFreq = 0,
+    freq = {},
+    maxChar = "";
+  joined.forEach((char) => {
+    if (freq[char]) {
+      freq[char]++;
+      if (freq[char] > maxFreq) {
+        maxFreq = freq[char];
+        maxChar = char;
       }
-    }
-    else
-    freq[char]=1;
+    } else freq[char] = 1;
   });
 
-  
-  return maxChar+' is the max letter frequncy  :'+maxFreq+ ' times \n';
+  return maxChar + " is the max letter frequncy  :" + maxFreq + " times \n";
 }
 
 console.log(
-timesOfMostFreqChar('hello world') // => 3
-,
-timesOfMostFreqChar('hello world lol') // => 5
-,
-timesOfMostFreqChar('hello world lol woooow') // => 7
-,
-timesOfMostFreqChar('hello world lol wow www.com') // => 6
+  timesOfMostFreqChar("hello world"), // => 3
+  timesOfMostFreqChar("hello world lol"), // => 5
+  timesOfMostFreqChar("hello world lol woooow"), // => 7
+  timesOfMostFreqChar("hello world lol wow www.com") // => 6
 );
+console.log("---------------------------------------------");
 
-
-
-console.log('Problem Solving Q: 11');
+console.log("Problem Solving Q: 11");
 
 /* Is Power Of Two */
 
@@ -341,39 +339,50 @@ Write a function that returns YES if a number is a power of 2, and NO otherwise.
 */
 
 function isPowerOfTwo(num) {
-  while(num>=1)
-  {
-    if(num===2||num===1)
-    return 'YES'
-    else
-num=num/2;
+  while (num >= 1) {
+    if (num === 2 || num === 1) return "YES";
+    else num = num / 2;
   }
-   return 'No';
-
+  return "No";
 }
 
-
 console.log(
-   " 2",isPowerOfTwo(2) // => 'YES'
-  ," 1",isPowerOfTwo(1) // => 'YES'  // I am sure not a typo 1 => YES
-  ," 4",isPowerOfTwo(4) // => 'YES'
-  ," 6",isPowerOfTwo(6) // => 'NO'
-  ," 11",isPowerOfTwo(11) // => 'NO'
-  ," 16",isPowerOfTwo(16) // => 'YES'
-  ," 18",isPowerOfTwo(18) // => 'No'.
-  ," 24",isPowerOfTwo(24) // => 'NO'
-  ," 25",isPowerOfTwo(25) // => 'NO'
-  ," 28",isPowerOfTwo(28) // => 'NO'
-  ," 32",isPowerOfTwo(32) // => 'YES'
-  ," 63",isPowerOfTwo(63) // => 'NO'
-  ," 64",isPowerOfTwo(64) // => 'YES'
-  ," 1023",isPowerOfTwo(1023) // => 'NO'
-  ," 1024",isPowerOfTwo(1024) // => 'YES'
-  ," 0",isPowerOfTwo(0) // => 'NO'  
+  " 2",
+  isPowerOfTwo(2), // => 'YES'
+  " 1",
+  isPowerOfTwo(1), // => 'YES'  // I am sure not a typo 1 => YES
+  " 4",
+  isPowerOfTwo(4), // => 'YES'
+  " 6",
+  isPowerOfTwo(6), // => 'NO'
+  " 11",
+  isPowerOfTwo(11), // => 'NO'
+  " 16",
+  isPowerOfTwo(16), // => 'YES'
+  " 18",
+  isPowerOfTwo(18), // => 'No'.
+  " 24",
+  isPowerOfTwo(24), // => 'NO'
+  " 25",
+  isPowerOfTwo(25), // => 'NO'
+  " 28",
+  isPowerOfTwo(28), // => 'NO'
+  " 32",
+  isPowerOfTwo(32), // => 'YES'
+  " 63",
+  isPowerOfTwo(63), // => 'NO'
+  " 64",
+  isPowerOfTwo(64), // => 'YES'
+  " 1023",
+  isPowerOfTwo(1023), // => 'NO'
+  " 1024",
+  isPowerOfTwo(1024), // => 'YES'
+  " 0",
+  isPowerOfTwo(0) // => 'NO'
 );
+console.log("---------------------------------------------");
 
-
-console.log('Problem Solving Q: 12');
+console.log("Problem Solving Q: 12");
 
 /* Reverse Each Word */
 
@@ -382,14 +391,80 @@ Write a function that reverses the characters of every word of a sentence.
 Input sentences contain only English letter and space characters.
 */
 function reverseEachWord(sentence) {
-  return sentence.split(' ').map((word) => {
-    return word.split('').reverse().join('');
-}).join(' ')
-
+  return sentence
+    .split(" ")
+    .map((word) => {
+      return word.split("").reverse().join("");
+    })
+    .join(" ");
 }
 
 console.log(
-reverseEachWord("This is a test") // => "sihT si a tset"
-,"\n ",reverseEachWord("Lets code guys") // => "steL edoc syug"
-,"\n ",reverseEachWord("Jouza admire Fried Chicken") // => "azuoJ erimda deirF nekcihC"
+  reverseEachWord("This is a test"), // => "sihT si a tset"
+  "\n ",
+  reverseEachWord("Lets code guys"), // => "steL edoc syug"
+  "\n ",
+  reverseEachWord("Jouza admire Fried Chicken") // => "azuoJ erimda deirF nekcihC"
+);
+console.log("---------------------------------------------");
+
+console.log("Problem Solving Q: 13");
+
+/* Largest Possible Sum */
+
+/*  
+Write a function that calculates the largest possible sum of any n consecutive numbers 
+in an array arr of integers (where n ≥ 1).
+*/
+
+function largestPossibleSum(array, times) {
+  let maxSum = 0,subArrays = {};
+  array.forEach((num, index) => {
+    subArrays[index] = array.slice(index, index + times);
+  });
+
+ // console.log("subArrays : ", subArrays);
+  for (let key in subArrays) {
+  //  console.log("arr :" + subArrays[key]);
+
+    let arrTotall = 0;
+    subArrays[key].forEach((num) => {
+      arrTotall += num;
+    });
+    if (arrTotall > maxSum) maxSum = arrTotall;
+  }
+
+  return maxSum;
+}
+
+console.log(
+  largestPossibleSum([10, 2, 3, 4, 2, 6, 8], 1), // => 10
+  "\n ",
+  largestPossibleSum([10, 2, 3, 4, 2, 6, 8], 2), // => 14
+  "\n ",
+  largestPossibleSum([10, 2, 3, 4, 2, 6, 8], 3), // => 16
+  "\n ",
+  largestPossibleSum([10, 2, 3, 4, 2, 6, 8], 4), // => 20
+  "\n ",
+  largestPossibleSum([10, 2, 3, 4, 2, 6, 8], 5), // => 23
+  "\n ",
+  largestPossibleSum([5, 2, 9, 3, 10, 4, -7, 2, 6, 8], 1), // => 10
+  "\n ",
+  largestPossibleSum([5, 2, 9, 3, 10, 4, -7, 2, 6, 8], 2), // => 14
+  "\n ",
+  largestPossibleSum([5, 2, 9, 3, 10, 4, -7, 2, 6, 8], 3), // => 22
+  "\n ",
+  largestPossibleSum([5, 2, 9, 3, 10, 4, -7, 2, 6, 8], 4), // => 26
+  "\n ",
+  largestPossibleSum([5, 2, 9, 3, 10, 4, -7, 2, 6, 8], 5), // => 29
+  "\n ",
+  largestPossibleSum([10, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 1), // => 10
+  "\n ",
+  largestPossibleSum([10, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 2), // => 19
+  "\n ",
+  largestPossibleSum([10, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 3), // => 22
+  "\n ",
+  largestPossibleSum([5, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 4), // => 32
+  "\n ",
+  largestPossibleSum([5, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 5) // => 36
 );
