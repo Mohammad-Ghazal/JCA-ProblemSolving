@@ -360,14 +360,36 @@ console.log(
   ," 6",isPowerOfTwo(6) // => 'NO'
   ," 11",isPowerOfTwo(11) // => 'NO'
   ," 16",isPowerOfTwo(16) // => 'YES'
-  ," 18",isPowerOfTwo(18) // => 'YES'.
-  ," ",isPowerOfTwo(24) // => 'NO'
-  ," ",isPowerOfTwo(25) // => 'NO'
-  ," ",isPowerOfTwo(28) // => 'NO'
-  ," ",isPowerOfTwo(32) // => 'YES'
-  ," ",isPowerOfTwo(63) // => 'NO'
-  ," ",isPowerOfTwo(64) // => 'YES'
-  ," ",isPowerOfTwo(1023) // => 'NO'
-  ," ",isPowerOfTwo(1024) // => 'YES'
-  ," ",isPowerOfTwo(0) // => 'NO'  
+  ," 18",isPowerOfTwo(18) // => 'No'.
+  ," 24",isPowerOfTwo(24) // => 'NO'
+  ," 25",isPowerOfTwo(25) // => 'NO'
+  ," 28",isPowerOfTwo(28) // => 'NO'
+  ," 32",isPowerOfTwo(32) // => 'YES'
+  ," 63",isPowerOfTwo(63) // => 'NO'
+  ," 64",isPowerOfTwo(64) // => 'YES'
+  ," 1023",isPowerOfTwo(1023) // => 'NO'
+  ," 1024",isPowerOfTwo(1024) // => 'YES'
+  ," 0",isPowerOfTwo(0) // => 'NO'  
+);
+
+
+console.log('Problem Solving Q: 12');
+
+/* Reverse Each Word */
+
+/*  
+Write a function that reverses the characters of every word of a sentence. 
+Input sentences contain only English letter and space characters.
+*/
+function reverseEachWord(sentence) {
+  return sentence.split(' ').map((word) => {
+    return word.split('').reverse().join('');
+}).join(' ')
+
+}
+
+console.log(
+reverseEachWord("This is a test") // => "sihT si a tset"
+,"\n ",reverseEachWord("Lets code guys") // => "steL edoc syug"
+,"\n ",reverseEachWord("Jouza admire Fried Chicken") // => "azuoJ erimda deirF nekcihC"
 );
