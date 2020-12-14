@@ -470,3 +470,103 @@ console.log(
 );
 
 
+
+console.log("Problem Solving Q:14 ");
+
+/* ArrayMiddle */
+
+/*  
+Given an array of negative/positive integers, return the element in the center position of the array.
+If the array has an even number of elements, return the average of the two middle elements instead.
+*/
+
+function ArrayMiddle(arr) {
+  if (arr.length % 2 === 0) {
+    return (arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2;
+  } else return arr[arr.length / 2 - 0.5];
+}
+
+console.log(
+  ArrayMiddle([200, 5, 100]), // => 5
+  "\n",
+  ArrayMiddle([2, 3, 2, 3, 2]), // => 2
+  "\n",
+  ArrayMiddle([2, 3]) // => 2.5
+);
+
+class slack {
+  constructor() {
+    this.data = [];
+    this.max = -1;
+  }
+  push(item) {
+    this.max += 1;
+    this.data[this.max] = item;
+  }
+  pop() {
+    if (this.max > -1) {
+      this.max -= 1;
+      return this.data[this.max + 1];
+    } else return;
+  }
+
+  isEmpty() {
+    return this.max === -1;
+  }
+  length() {
+    return this.max + 1;
+  }
+  peek() {
+    return this.data[this.max];
+  }
+}
+
+console.log("---------------------------------------------");
+
+console.log("Problem Solving Q:15 ");
+
+/*  commonCharacters*/
+
+/*  
+Write a function that accepts two strings as arguments,
+ and returns only the characters that are common to both strings.
+Your function should return the common characters in the same order that they appear in the first argument. 
+Do not return duplicate characters and ignore whitespace in your returned string.
+*/
+
+function commonCharacters(str1, str2) {
+  let chars1 = str1.split(" ").join("").split("");
+  let chars2 = str2.split(" ").join("").split("");
+  let c1NoDub = [];
+  let c2NoDub = [];
+  let common = [];
+
+  chars1.forEach((char) => {
+    if (!c1NoDub.includes(char)) c1NoDub.push(char);
+  });
+  chars2.forEach((char) => {
+    if (!c2NoDub.includes(char)) c2NoDub.push(char);
+  });
+  c1NoDub.forEach((char) => {
+    if (c2NoDub.includes(char)) common.push(char);
+  });
+
+  //   console.log('chars1 :',chars1);
+  //   console.log('chars2 :',chars2);
+
+  // console.log('common :' , common);
+
+  return common.join("");
+}
+
+/* 
+Examples:
+*/
+console.log(
+  "",
+  commonCharacters("abc", "abc"), // => 'abc'
+  "\n",
+  commonCharacters("What is love?", "Baby don't hurt me"), // => 'hatoe'
+  "\n",
+  commonCharacters("Riding on a buffalo makes me more approachable", "so what") // => 'oash'
+);
