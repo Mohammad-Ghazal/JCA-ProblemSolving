@@ -570,3 +570,45 @@ console.log(
   "\n",
   commonCharacters("Riding on a buffalo makes me more approachable", "so what") // => 'oash'
 );
+
+
+
+
+  
+console.log('Problem Solving Q:16 ');
+
+/* evenAppearance */
+
+/*  
+Find the first item that appear an even number of times in an array.
+*/
+
+
+
+function evenAppearance(nums) {
+  let obj ={};
+  for (let num of nums) 
+  {
+  obj[num]= obj[num]+1 || 1
+  if(obj[num]===2) return num
+}
+return 'no even rep' 
+;
+//return obj;
+
+}
+
+
+
+console.log(evenAppearance([1,2,6,6]));
+
+/* 
+Examples:
+evenAppearance([1,2,6,6]) // => 6
+evenAppearance([1,2,9,8,8,6,6]) // => 8 
+evenAppearance([1,9,7,3,6,6,8,9,9]) // => 6
+*/
+
+
+
+
