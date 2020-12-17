@@ -274,7 +274,6 @@ function longestSequence(sequence) {
   }
   if (max === 0) return "There is no one sequenced";
   return max;
-  
 }
 
 console.log(
@@ -418,14 +417,15 @@ in an array arr of integers (where n ≥ 1).
 */
 
 function largestPossibleSum(array, times) {
-  let maxSum = 0,subArrays = {};
+  let maxSum = 0,
+    subArrays = {};
   array.forEach((num, index) => {
     subArrays[index] = array.slice(index, index + times);
   });
 
- // console.log("subArrays : ", subArrays);
+  // console.log("subArrays : ", subArrays);
   for (let key in subArrays) {
-  //  console.log("arr :" + subArrays[key]);
+    //  console.log("arr :" + subArrays[key]);
 
     let arrTotall = 0;
     subArrays[key].forEach((num) => {
@@ -468,8 +468,6 @@ console.log(
   "\n ",
   largestPossibleSum([5, 2, 10, 9, 3, 10, 4, -7, 2, 6, 8], 5) // => 36
 );
-
-
 
 console.log("Problem Solving Q:14 ");
 
@@ -571,11 +569,7 @@ console.log(
   commonCharacters("Riding on a buffalo makes me more approachable", "so what") // => 'oash'
 );
 
-
-
-
-  
-console.log('Problem Solving Q:16 ');
+console.log("Problem Solving Q:16 ");
 
 /* evenAppearance */
 
@@ -583,24 +577,18 @@ console.log('Problem Solving Q:16 ');
 Find the first item that appear an even number of times in an array.
 */
 
-
-
 function evenAppearance(nums) {
-  let obj ={};
-  for (let num of nums) 
-  {
-  obj[num]= obj[num]+1 || 1
-  if(obj[num]===2) return num
-}
-return 'no even rep' 
-;
-//return obj;
-
+  let obj = {};
+  for (let num of nums) {
+    obj[num] = obj[num] + 1 || 1;
+    if (obj[num] === 2) return num;
+  }
+  return "no even rep";
+  //return obj;
 }
 
-
-
-console.log(evenAppearance([1,2,6,6]));
+console.log("evenAppearance([1,2,6,6])");
+console.log(evenAppearance([1, 2, 6, 6]));
 
 /* 
 Examples:
@@ -609,6 +597,31 @@ evenAppearance([1,2,9,8,8,6,6]) // => 8
 evenAppearance([1,9,7,3,6,6,8,9,9]) // => 6
 */
 
+console.log("Problem Solving Q:17 ");
 
+/* findFirstNonIterativedCharacter */
 
+/*  
+Given an arbitrary input string, return the first Non Iteratived character.
+ For strings with all repeats, return 'sorry'
+*/
 
+function findFirstNonIterativedCharacter(str) {
+  let obj = {};
+  for (let char of str) {
+    obj[char] = obj[char] + 1 || 1;
+  }
+  
+  for(el in obj){
+    if (obj[el]===1)
+    return el
+  }
+  return 'sorry'
+}
+
+/* 
+Examples:
+findFirstNonIterativedCharacter('ABCDBIRDUP') // => 'A'
+findFirstNonIterativedCharacter('ALABAMA') // => 'L'
+findFirstNonIterativedCharacter('Uber for horses') // => 'U'
+*/
